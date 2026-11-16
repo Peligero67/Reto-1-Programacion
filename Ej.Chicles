@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class ChiclesRegalo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        long[] numeros = new long[3];
+
+        while (true) {
+
+            for (int i = 0; i < 3; i++) {
+                numeros[i] = sc.nextLong();
+            }
+
+            if (numeros[0] == 0 && numeros[1] == 0 && numeros[2] == 0) {
+                break;
+            }
+
+            long necesarios = numeros[0];
+            long regalados = numeros[1];
+            long total = numeros[2];
+            long envoltorios = numeros[2];
+
+            if (envoltorios >= necesarios && regalados >= necesarios) {
+                System.out.println("RUINA");
+            } else {
+
+                while (envoltorios >= necesarios) {
+
+                    total = total + regalados * (envoltorios / necesarios);
+
+                    envoltorios = envoltorios % necesarios
+                            + regalados * (envoltorios / necesarios);
+                }
+
+                System.out.println(total + " " + envoltorios);
+            }
+        }
+
+        sc.close();
+    }
+}
