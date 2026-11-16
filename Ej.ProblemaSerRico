@@ -1,1 +1,28 @@
+import java.util.Scanner;
+public class Reto1 {
+    public static void main(String[] args){
+        Scanner kirk = new Scanner(System.in);
+        int compartimentos = 0;
+        int capacidad = 0;
+        int diferencia = 0;
+        int numerodecasos = kirk.nextInt();
+        int[] resultados = new int[numerodecasos];
+
+        for (int i = 0;i < numerodecasos; i++){
+            int total = 0;
+        compartimentos = kirk.nextInt();
+        capacidad = kirk.nextInt();
+        diferencia = kirk.nextInt();
+            for (int x = 0;x < compartimentos; x++){
+                total = total + capacidad;
+                capacidad = capacidad-diferencia;
+
+            }
+            resultados[i] = total;
+        }
+        for (int i = 0; i < numerodecasos; i++){
+            System.out.println(resultados[i]);
+        }
+    }
+}
 
