@@ -1,1 +1,25 @@
+import java.util.Scanner;
 
+public class Ejercicio2Reto {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Dime un número dígitos");
+        long numero = sc.nextLong();
+        while (numero != 0) {
+            long divisor = 1;
+            while (divisor * 10 <= numero) {
+                divisor = divisor * 10;
+            }
+            long suma = 0;
+            while (numero > 0) {
+                suma = suma + numero;
+                numero = numero % divisor;
+                divisor = divisor / 10;
+            }
+            System.out.println(suma);
+
+            numero = sc.nextLong();
+        }
+    }
+}
